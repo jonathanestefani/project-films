@@ -1,0 +1,12 @@
+version: '3'
+services:
+    texoit-frontend:
+        image: node:14.15.4
+        container_name: texoit-frontend
+        user: "node"
+        restart: always
+        working_dir: /app
+        volumes:
+            - ./:/app
+        network_mode: "host"
+        command: bash -c "npm install ; npm i @angular/cli ; npm start"
