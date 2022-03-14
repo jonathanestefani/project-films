@@ -25,3 +25,31 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Dash Board
+
+ <details>
+  <summary>List year with multiple winners</summary>
+  List the number of winners each year;
+</details>
+
+ <details>
+  <summary>Top 3 studios with winners</summary>
+  list the top 3 studios with winners
+</details>
+
+ <details>
+  <summary>Producers with longest and shortest interval between wins</summary>
+  lists the producers with the longest and shortest win intervals
+</details>
+
+ <details>
+  <summary>List movie winners by year</summary>
+  List all movie winners by year
+</details>
+
+## List Films
+<details>
+  <summary>List year with multiple winners</summary>
+  List all movies from all years
+</details>
