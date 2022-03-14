@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { Utils } from './utils';
 
 @Injectable({
     providedIn: 'root'
@@ -13,8 +12,7 @@ export class apiService {
         withCredentials: true
     };
 
-    public constructor(private http: HttpClient,
-                       private utils: Utils) { }
+    public constructor(private http: HttpClient) { }
 
     public get(resource: string, params: any): Promise<any> {
         return this.http.get(this.host + resource + params, this.options).toPromise();
