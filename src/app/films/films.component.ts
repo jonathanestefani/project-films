@@ -20,14 +20,6 @@ export class FilmsComponent {
   public defLimit = 10;
   public lengthItems: number = 0;
   public search: ISearch = {
-    filters: {
-      search: '',
-      dateFirstHist: '',
-      dateLastHist: ''
-    },
-    with: [],
-    field: '',
-    value: '',
     page: 1,
     limit: this.defLimit,
     total: 0,
@@ -47,7 +39,7 @@ export class FilmsComponent {
     }
 
     return new Promise((resolve) => {
-      this.filmsService.getFilms([], this.search.page, 10).then((resp) => {
+      this.filmsService.getFilms([], this.search.page, this.search.limit).then((resp) => {
         if (pagination === true) {
           this.dataSource.data.push(...resp.content);
       } else {
