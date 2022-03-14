@@ -10,7 +10,7 @@ export class FilmsService {
   constructor(private http: apiService,
               private utils: Utils) { }
 
-  public getFilmes(params:any[], page: number = 0, size: number = 15): Promise<any> {
+  public getFilms(params:any[], page: number = 0, size: number = 15): Promise<any> {
     return this.http.get('movies', '?page=' + page + '&size=' + size + '&' + this.utils.buildQuery(params));
   }
 

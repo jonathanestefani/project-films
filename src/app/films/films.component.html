@@ -1,1 +1,51 @@
-<p>films works!</p>
+<mat-card>
+    <mat-card-content>
+        <mat-card>
+            <mat-card-title>List movies</mat-card-title>
+            <mat-card-content>
+                <mat-table [dataSource]="dataSource" matSort>
+                    <ng-container matColumnDef="id">
+                        <mat-header-cell *matHeaderCellDef>
+                            <span mat-sort-header>ID</span>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let row" data-label="id"> {{row.id}} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="year">
+                        <mat-header-cell *matHeaderCellDef style="display:block;text-align: center;">
+                            <span mat-sort-header>Year</span>
+                            <input type="number" appearance="outline" color="white" (keyup)="applyFilter($event)"
+                                name="year" placeholder="Filter by year">
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let row" data-label="year"> {{row.year}} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="title">
+                        <mat-header-cell *matHeaderCellDef>
+                            <span mat-sort-header>Title</span>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let row" data-label="title"> {{row.title}} </mat-cell>
+                    </ng-container>
+
+                    <ng-container matColumnDef="winner">
+                        <mat-header-cell *matHeaderCellDef style="display:block;text-align: center;">
+                            <span mat-sort-header>Winner</span>
+                            <select name="winner" (change)="applyFilter($event)">
+                                <option value="">Yes/No</option>
+                                <option value="true">Yes</option>
+                                <option value="false">No</option>
+                            </select>
+                        </mat-header-cell>
+                        <mat-cell *matCellDef="let row" data-label="title"> {{row.winner}} </mat-cell>
+                    </ng-container>
+
+                    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                    <mat-row *matRowDef="let row; columns: displayedColumns;">
+                    </mat-row>
+                </mat-table>
+
+                <mat-paginator appPagination [length]="search.total" [pageSizeOptions]="[5,10, 20, 40]" [pageSize]="defLimit" [hidePageSize]='true' (page)="onPageEvent($event)"></mat-paginator>
+            </mat-card-content>
+        </mat-card>
+    </mat-card-content>
+</mat-card>

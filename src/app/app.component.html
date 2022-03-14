@@ -2,23 +2,23 @@
     <mat-sidenav position="start" fixedInViewport="true" class="menuTop sidenav" [mode]="'side'" [opened]="true">
         <mat-toolbar color="primary">
             <mat-toolbar-row class="mat-drawer-inner-container">
-                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" fxShow fxHide.xs="false" fxFlex.xs="200px" fxHide.lg="true">
+                <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" fxShow fxHide.xs="false" fxHide.lg="true">
                     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
                 </button>
-                <h1 class="texoIt">TexoIt</h1>
+                <h1 class="texoIt">Frontend Angular Test</h1>
                 <span class="menu-spacer"></span>
             </mat-toolbar-row>
         </mat-toolbar>
     </mat-sidenav>
 </mat-sidenav-container>
 <mat-drawer-container class="drawLeft-container" autosize>
-    <mat-drawer #drawer class="drawLeft-sidenav" fxLayout="row" fxLayoutAlign="space-between" fxFlex="250px" [fxShow.md]="isVisibleOnMobile()" fxFlex.xs="250px" mode="side">
+    <mat-drawer #drawer class="drawLeft-sidenav" fxLayout="row" fxLayoutAlign="space-between" fxFlex="250px" fxFlex.xs="250px" mode="push" position="start">
         <mat-nav-list class="">
             <a mat-list-item matTooltip="Dash" class="active" [routerLink]="['/dash']">
-                <mat-icon class="activeMenuLeftIcon" aria-hidden="false" aria-label="home icon">Dash</mat-icon>
+                Dash
             </a>
             <a mat-list-item matTooltip="Films" [routerLink]="['/films']">
-                <mat-icon aria-hidden="false" aria-label="article icon">article</mat-icon>
+                Films
             </a>
         </mat-nav-list>
     </mat-drawer>

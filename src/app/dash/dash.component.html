@@ -1,18 +1,10 @@
-<mat-card style="width:100%;">
+<mat-card>
   <mat-card-content>
-    <div class="content" fxLayout="row" fxLayout.xs="column" fxFlexFill>
-      <div fxFlex="50%" fxLayoutGap="20px" fxFlexOrder="1">
-        <app-multiple-winners></app-multiple-winners>
-      </div>
-      <div fxFlex="50%" fxLayoutGap="20px" fxFlexOrder="1">
-        <app-studios-winners></app-studios-winners>
-      </div>
-      <div fxFlex="50%" fxLayoutGap="20px" fxFlexOrder="1">
-        <app-producers-longest></app-producers-longest>
-      </div>
-      <div fxFlex="50%" fxLayoutGap="20px" fxFlexOrder="1">
-        <app-movies-winners></app-movies-winners>
-      </div>
+    <div fxLayout="row wrap" class="cardList" fxLayout.lt-sm="column" fxLayoutGap="25px" fxLayoutAlign="flex-start">
+      <app-multiple-winners fxFlex="0 1 calc(50% - 32px)"></app-multiple-winners>
+      <app-studios-winners fxFlex="0 1 calc(50% - 32px)"></app-studios-winners>
+      <app-producers-longest fxFlex="0 1 calc(50% - 32px)"></app-producers-longest>
+      <app-movies-winners fxFlex="0 1 calc(50% - 32px)"></app-movies-winners>
     </div>
   </mat-card-content>
 </mat-card>

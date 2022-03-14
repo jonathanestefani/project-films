@@ -1,27 +1,24 @@
-<mat-card style="width:100%;">
+<mat-card>
     <mat-card-title>Producers with longest and shortest interval between wins</mat-card-title>
-    <mat-card-content>
+    <mat-card-content mat-elevation-z8>
+        <br />
+        <mat-label>Maximum</mat-label>
         <mat-table [dataSource]="dataSourceMin" matSort>
-
-            <!-- ID Column -->
             <ng-container matColumnDef="producer">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Producer </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="producer"> {{row.producer}} </mat-cell>
             </ng-container>
 
-            <!-- Progress Column -->
             <ng-container matColumnDef="interval">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Interval </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="interval"> {{row.interval}}% </mat-cell>
             </ng-container>
 
-            <!-- Progress Column -->
             <ng-container matColumnDef="previousWin">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Previous Years </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="previousWin"> {{row.previousWin}}% </mat-cell>
             </ng-container>
 
-            <!-- Progress Column -->
             <ng-container matColumnDef="followingWin">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Following Year </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="followingWin"> {{row.followingWin}}% </mat-cell>
@@ -31,12 +28,8 @@
             <mat-row *matRowDef="let row; columns: displayedColumns;">
             </mat-row>
         </mat-table>
-
-        <mat-paginator [pageSizeOptions]="[ 10, 25, 100]"></mat-paginator>
-    </mat-card-content>
-</mat-card>
-<mat-card style="width:100%;">
-    <mat-card-content>
+        <br />
+        <mat-label>Mimimum</mat-label>
         <mat-table [dataSource]="dataSourceMax" matSort>
 
             <!-- ID Column -->
@@ -48,26 +41,24 @@
             <!-- Progress Column -->
             <ng-container matColumnDef="interval">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Interval </mat-header-cell>
-                <mat-cell *matCellDef="let row" data-label="interval"> {{row.interval}}% </mat-cell>
+                <mat-cell *matCellDef="let row" data-label="interval"> {{row.interval}} </mat-cell>
             </ng-container>
 
             <!-- Progress Column -->
             <ng-container matColumnDef="previousWin">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Previous Years </mat-header-cell>
-                <mat-cell *matCellDef="let row" data-label="previousWin"> {{row.previousWin}}% </mat-cell>
+                <mat-cell *matCellDef="let row" data-label="previousWin"> {{row.previousWin}} </mat-cell>
             </ng-container>
 
             <!-- Progress Column -->
             <ng-container matColumnDef="followingWin">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Following Year </mat-header-cell>
-                <mat-cell *matCellDef="let row" data-label="followingWin"> {{row.followingWin}}% </mat-cell>
+                <mat-cell *matCellDef="let row" data-label="followingWin"> {{row.followingWin}} </mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;">
             </mat-row>
         </mat-table>
-
-        <mat-paginator [pageSizeOptions]="[ 10, 25, 100]"></mat-paginator>
     </mat-card-content>
 </mat-card>

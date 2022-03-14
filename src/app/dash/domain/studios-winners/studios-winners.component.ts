@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
@@ -9,7 +9,9 @@ import { FilmsService } from '../../../services/films/films.service';
   templateUrl: './studios-winners.component.html',
   styleUrls: ['./studios-winners.component.scss']
 })
-export class StudiosWinnersComponent implements OnInit {
+export class StudiosWinnersComponent {
+  @ViewChild(MatPaginator) paginator: MatPaginator = MatPaginator.prototype;
+  @ViewChild(MatSort) sort: MatSort = MatSort.prototype;
 
   displayedColumns = ['name', 'winCount'];
   dataSource: MatTableDataSource<any> = new MatTableDataSource([{}]);
@@ -18,28 +20,17 @@ export class StudiosWinnersComponent implements OnInit {
 
   ngAfterViewInit() {
     this.filmsService.getStudioWithWinners().then((resp) => {
-      console.log(resp);
-      // Assign the data to the data source for the table to render
-      this.dataSource = new MatTableDataSource(resp.studios);
+      this.dataSource.data = [];
+      for(let idx = 0; idx < 3; idx++) {
+        this.dataSource.data.push(resp.studios[idx]);
+      }
+      //  = new MatTableDataSource(resp.studios);
 
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
     }).catch(err => {
-      console.log('erro');
       console.log(err);
     })
-
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
-  ngOnInit() {}
-
-  @ViewChild(MatPaginator) paginator: MatPaginator = MatPaginator.prototype;
-  @ViewChild(MatSort) sort: MatSort = MatSort.prototype;
-
-  applyFilter(filterValue: string) {
-    filterValue = filterValue.trim(); // Remove whitespace
-    filterValue = filterValue.toLowerCase(); // Datasource defaults to lowercase matches
-    this.dataSource.filter = filterValue;
   }
 
 }

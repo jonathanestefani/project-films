@@ -1,0 +1,76 @@
+input,
+select {
+    display: block;
+    width: 95%;
+    padding: 5px 2px;
+}
+
+::ng-deep .mat-sort-header-container {
+    justify-content: center !important;
+}
+::ng-deep .custom-paginator-page {
+    padding: 5px 10px;
+    margin: 0 2px;
+    border-radius: 4px;
+    border: none;
+    filter: drop-shadow(1px 1px 1px #ccc);
+    outline: none;
+    cursor: pointer;
+}
+::ng-deep .custom-paginator-page-enabled {
+    color: #555;
+    background: white;
+}
+::ng-deep .custom-paginator-page-disabled {
+    color: white;
+    background: rgb(10, 154, 237);
+}
+::ng-deep .mat-paginator-container .mat-button-wrapper {
+    background: white;
+    padding: 4px 0;
+    border-radius: 2px;
+    border: none;
+    filter: drop-shadow(1px 1px 1px #ccc);
+}
+
+::ng-deep .mat-paginator-container {
+    justify-content: center !important;
+}
+
+::ng-deep .mat-paginator-range-label{
+    display: none !important;
+}
+::ng-deep .mat-paginator-range-actions {
+    width: 100%;
+}
+::ng-deep .custom-containner-buttons {
+    width: 100%;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+::ng-deep .custom-paginator-buttons {
+    display: inline-block;
+}
+
+
+
+::ng-deep .mat-header-cell {
+    background: #eee;
+    color: black;
+  }
+  
+  ::ng-deep .mat-row:nth-child(even){
+    background-color: white;
+  }
+        
+  ::ng-deep .mat-row:nth-child(odd){
+    background-color: #f9f9f9;
+  }
+  ::ng-deep .mat-table {
+    border: 1px solid #ccc;
+  }
+  .mat-paginator {
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-top: none;
+  }

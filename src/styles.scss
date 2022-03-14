@@ -1,13 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
 @media screen and (max-width: 960px) {
   .mat-table {
-    border: 0;
-    vertical-align: middle
+    border: 1px;
+    vertical-align: middle;
   }
 
   .mat-table caption {
@@ -18,29 +23,54 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-bottom: 5px solid #ddd;
     display: block;
   }
-  
+
   .mat-table .mat-cell {
     border-bottom: 1px solid #ddd;
     display: block;
     font-size: 1em;
     text-align: right;
     font-weight: bold;
-    height:30px;
+    height: 30px;
     margin-bottom: 4%;
   }
   .mat-table .mat-cell:before {
-  
     content: attr(data-label);
     float: left;
     text-transform: uppercase;
     font-weight: normal;
-    
-    font-size: .85em;
+
+    font-size: 0.85em;
   }
   .mat-table .mat-cell:last-child {
     border-bottom: 0;
   }
-    .mat-table .mat-cell:first-child {
+  .mat-table .mat-cell:first-child {
     margin-top: 4%;
   }
+}
+
+/* Pagination style */
+::ng-deep .custom-paginator-page {
+  padding: 5px 10px;
+  margin: 0 2px;
+  border-radius: 4px;
+  border: none;
+  filter: drop-shadow(1px 1px 1px #ccc);
+  outline: none;
+  cursor: pointer;
+}
+::ng-deep .custom-paginator-page-enabled {
+  color: #555;
+  background: white;
+}
+::ng-deep .custom-paginator-page-disabled {
+  color: white;
+  background: rgb(10, 154, 237);
+}
+::ng-deep .mat-paginator-container .mat-button-wrapper {
+  background: white;
+  padding: 4px 0;
+  border-radius: 2px;
+  border: none;
+  filter: drop-shadow(1px 1px 1px #ccc);
 }

@@ -3,6 +3,9 @@
     height: 42px;
     overflow: hidden;
 }
+.mat-toolbar.mat-primary {
+    background-color: #343A40;
+}
 .toolbarIcons {
     width: 150px;
     position: absolute;
@@ -79,29 +82,4 @@ mat-sidenav {
     width: 100%;
     height: calc(100vh - 2px);
     padding: 0;
-}
-
-::ng-deep .custom-paginator-page {
-    padding: 5px 10px;
-    margin: 0 2px;
-    border-radius: 4px;
-    border: none;
-    filter: drop-shadow(1px 1px 1px #ccc);
-    outline: none;
-    cursor: pointer;
-}
-::ng-deep .custom-paginator-page-enabled {
-    color: #555;
-    background: white;
-}
-::ng-deep .custom-paginator-page-disabled {
-    color: white;
-    background: rgb(10, 154, 237);
-}
-::ng-deep .mat-paginator-container .mat-button-wrapper {
-    background: white;
-    padding: 4px 0;
-    border-radius: 2px;
-    border: none;
-    filter: drop-shadow(1px 1px 1px #ccc);
 }

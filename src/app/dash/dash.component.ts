@@ -5,6 +5,4 @@ import { Component } from '@angular/core';
   templateUrl: './dash.component.html',
   styleUrls: ['./dash.component.scss']
 })
-export class DashComponent {
-
-}
+export class DashComponent {}

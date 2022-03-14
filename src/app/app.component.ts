@@ -14,12 +14,4 @@ export class AppComponent {
       //console.log(e);
     });
   }
-
-  public isVisibleOnMobile() {
-    console.log('Ativou mobile');
-  }
-
-  public isVisibleOnDesktop() {
-    console.log('Ativou desktop');
-  }
 }

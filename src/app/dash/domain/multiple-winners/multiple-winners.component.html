@@ -1,25 +1,21 @@
-<mat-card style="width:100%;">
+<mat-card>
     <mat-card-title>List years with multiple winners</mat-card-title>
     <mat-card-content>
         <mat-table [dataSource]="dataSource" matSort>
 
-            <!-- ID Column -->
             <ng-container matColumnDef="year">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Year </mat-header-cell>
                 <mat-cell *matCellDef="let row" data-label="year"> {{row.year}} </mat-cell>
             </ng-container>
 
-            <!-- Progress Column -->
             <ng-container matColumnDef="winnerCount">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Win Count </mat-header-cell>
-                <mat-cell *matCellDef="let row" data-label="winnerCount"> {{row.winnerCount}}% </mat-cell>
+                <mat-cell *matCellDef="let row" data-label="winnerCount"> {{row.winnerCount}} </mat-cell>
             </ng-container>
 
             <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
             <mat-row *matRowDef="let row; columns: displayedColumns;">
             </mat-row>
         </mat-table>
-
-        <mat-paginator [pageSizeOptions]="[ 10, 25, 100]"></mat-paginator>
     </mat-card-content>
 </mat-card>

@@ -1,7 +1,24 @@
-table {
-  width: 100%;
+.cardList {
+  display: flex;
+  flex-direction: column;
+}
+/* Row Gap */
+.cardList > *:not(:last-child) {
+  margin-bottom: 15px;
 }
 
-.mat-column-actions {
-  text-align: right;
+::ng-deep .mat-header-cell {
+  background: #eee;
+  color: black;
+}
+
+::ng-deep .mat-row:nth-child(even){
+  background-color: white;
+}
+      
+::ng-deep .mat-row:nth-child(odd){
+  background-color: #f9f9f9;
+}
+::ng-deep .mat-table {
+  border: 1px solid #ccc;
 }
