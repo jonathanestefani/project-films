@@ -1,0 +1,12 @@
+{
+    "/api/*": {
+        "context": "/api/*",
+        "target": "https://tools.texoit.com",
+        "secure": false,
+        "changeOrigin": true,
+        "headers": { "Connection": "keep-alive"},
+        "pathRewrite": {
+            "^/api": "https://tools.texoit.com/backend-java/api"
+          }
+    }
+}
